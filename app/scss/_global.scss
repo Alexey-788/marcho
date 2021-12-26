@@ -1,0 +1,16 @@
+body {
+  @extend %quicksand-500;
+  line-height: 26px;
+  font-size: 16px;
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}

@@ -3,6 +3,93 @@
 @import 'fonts';
 @import 'global';
 
+.header {
+  padding: 40px 0;
 
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  align-self: stretch;
+
+  &__list {
+    display: flex;
+    height: 100%;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+    border-bottom: 1px solid transparent;
+    transition: all .5s;
+
+    &--active {
+      border-bottom-color: $primary;
+    }
+  }
+
+  &__list-item:hover {
+    border-bottom-color: $primary;
+  }
+
+  &__list-item:hover &__list-link {
+    color: $primary;
+  }
+
+  &__list-item + &__list-item {
+    margin-left: 40px;
+  }
+
+  &__list-link {
+    text-transform: uppercase;
+    @extend %roboto-400;
+    color: $dark;
+    transition: all .5s;
+  }
+
+  &__list-item--active &__list-link {
+    @extend %roboto-700;
+    color: $primary;
+  }
+
+}
+
+.user-actions {
+  display: flex;
+
+  &__link {
+    position: relative;
+  }
+
+  &__link + &__link {
+    margin-left: 25px;
+  }
+
+  &__number {
+    position: absolute;
+    top: -8px;
+    right: -13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $primary;
+    color: $white;
+    opacity: 1;
+    transition: opacity .7s;
+    font-size: 12px;
+
+    &--zero {
+      opacity: 0;
+    }
+  }
+}
 
 @import 'media';
